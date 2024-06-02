@@ -19,4 +19,4 @@ def write_image(path: Union[Path, str], image: np.ndarray) -> None:
     '''
     Write an array of linear RGB radiance values ∈ [0,1] as a PNG or JPG image.
     '''
-    Image.fromarray(np.uint8(255 * image.clip(0, 1)**(1))).save(path)
+    Image.fromarray(np.uint8(255 * image.clip(0, 1)**(1/2.2))).save(path)
